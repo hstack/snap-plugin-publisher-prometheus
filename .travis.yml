@@ -1,4 +1,14 @@
+sudo: true
+dist: trusty
 language: go
 go:
-  - 1.7.x
-install: make deps
+- 1.7.3
+env:
+  global:
+  - ORG_PATH=/home/travis/gopath/src/github.com/hstack
+  - SNAP_PLUGIN_SOURCE=/home/travis/gopath/src/github.com/${TRAVIS_REPO_SLUG}
+before_install:
+- "[[ -d $SNAP_PLUGIN_SOURCE ]] || mkdir -p $ORG_PATH && ln -s $TRAVIS_BUILD_DIR $SNAP_PLUGIN_SOURCE"
+install:
+- cd $SNAP_PLUGIN_SOURCE
+- make deps
