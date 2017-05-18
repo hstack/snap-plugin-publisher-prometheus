@@ -1,0 +1,10 @@
+name: prometheus
+type: publisher
+maintainer: hstack
+license: Apache-2.0
+description: "Publishes metrics to a Prometheus Push Gateway"
+status: Experimental
+badge:
+  - "[![Build Status](https://travis-ci.org/hstack/snap-plugin-publisher-prometheys.svg?branch=master)](https://travis-ci.org/hstack/snap-plugin-publisher-prometheus)"
+ci:
+- https://travis-ci.org/hstack/snap-plugin-publisher-prometheus
