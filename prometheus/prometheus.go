@@ -163,7 +163,7 @@ func sendMetrics(config map[string]ctypes.ConfigValue, promUrl *url.URL, client 
 		return
 	}
 	defer res.Body.Close()
-	_, err := ioutil.ReadAll(res.Body)
+	_, err = ioutil.ReadAll(res.Body)
 	if err != nil {
 		logger.Error("Error getting Prometheus response: %v", err)
 	}
