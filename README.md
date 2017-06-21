@@ -50,7 +50,7 @@ All OSs currently supported by Snap:
 
 ### Installation
 #### Download prometheus plugin binary:
-You can get the pre-built binaries for your OS and architecture at plugin's [GitHub Releases](https://github.com/adragomir/snap-plugin-publisher-prometheus/releases) page.
+You can get the pre-built binaries for your OS and architecture at plugin's [GitHub Releases](https://github.com/hstack/snap-plugin-publisher-prometheus/releases) page.
 
 #### To build the plugin binary:
 Fork https://github.com/intelsdi-x/snap-plugin-publisher-prometheus
@@ -142,7 +142,7 @@ $ snaptel task stop <task_id>
 This plugin only supports the "host" tag for now.
 
 ### Roadmap
-As we launch this plugin, we do not have any outstanding requirements for the next release. If you have a feature request, please add it as an [issue](https://github.com/adragomir/snap-plugin-publisher-prometheus/issues).
+As we launch this plugin, we do not have any outstanding requirements for the next release. If you have a feature request, please add it as an [issue](https://github.com/hstack/snap-plugin-publisher-prometheus/issues).
 
 ## Community Support
 This repository is one of **many** plugins in **Snap**, a powerful telemetry framework. See the full project at http://github.com/intelsdi-x/snap To reach out to other users, head to the [main framework](https://github.com/intelsdi-x/snap#community-support)

@@ -22,7 +22,7 @@ package main
 import (
 	"os"
 
-	"github.com/adragomir/snap-plugin-publisher-prometheus/prometheus"
+	"github.com/hstack/snap-plugin-publisher-prometheus/prometheus"
 	"github.com/intelsdi-x/snap/control/plugin"
 )
 
