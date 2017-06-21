@@ -1,0 +1,26 @@
+package: github.com/hstack/snap-plugin-publisher-prometheus
+import:
+- package: github.com/Sirupsen/logrus
+  version: cd7d1bbe41066b6c1f19780f895901052150a575
+- package: github.com/intelsdi-x/snap
+  version: 0b2c0313ff98ef3feccf78ff56a51bb44ccbe5bc
+  subpackages:
+  - control/plugin
+  - control/plugin/cpolicy
+  - control/plugin/encoding
+  - control/plugin/encrypter
+  - core
+  - core/cdata
+  - core/ctypes
+  - core/serror
+  - pkg/ctree
+  - pkg/schedule
+  - pkg/stringutils
+  - scheduler/wmap
+- package: github.com/golang/protobuf
+  version: 1fb8fd32a09087bcd727225167edd31e1b9ceb24
+  subpackages:
+  - proto
+  - protoc-gen-go
+- package: google.golang.org/grpc
+  version: 42c095b6c9bdd80d4435b064508c398afdb0ec99

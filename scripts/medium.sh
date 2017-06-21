@@ -4,20 +4,17 @@ set -e
 set -u
 set -o pipefail
 
-sudo service docker restart
-sleep 10
-docker run -d -p 4242:4242 --name=opentsdb opower/opentsdb:latest
+TRAVIS=${TRAVIS:-}
 
-SNAP_OPENTSDB_HOST=$(docker inspect -f '{{ .NetworkSettings.IPAddress }}' opentsdb)
-export SNAP_OPENTSDB_HOST
-_info "OpenTSDB Host: ${SNAP_OPENTSDB_HOST}"
+if [[ $TRAVIS == "true" ]]; then
+    _info "Provisioning Mesos master and agent..."
+    export SNAP_MESOS_MASTER="127.0.0.1:5050"
+    export SNAP_MESOS_AGENT="127.0.0.1:5051"
 
-_info "Waiting for OpenTSDB docker container"
-while ! curl --silent -G "http://${SNAP_OPENTSDB_HOST}:4242" > /dev/null 2>&1 ; do
-  sleep 1
-  echo -n "."
-done
-echo
+    sudo ./scripts/provision-travis.sh --mesos_release "${MESOS_RELEASE}" --ip_address 127.0.0.1
 
-UNIT_TEST="go_test"
-test_unit
+    UNIT_TEST="go_test"
+    test_unit
+else
+    _info "Not running in Travis CI. Skipping medium test."
+fi

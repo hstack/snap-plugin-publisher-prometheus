@@ -17,15 +17,17 @@
 # limitations under the License.
 
 default:
+	$(MAKE) clean
 	$(MAKE) deps
 	$(MAKE) all
+clean:
+	-rm -rf build/
+	-rm -rf vendor/
+	-rm -rf Godeps/_workspace
+	-rm -rf tmp/
+	-rm -rf profile.cov
 deps:
-	go get -u github.com/golang/protobuf/proto
-	go get -u github.com/golang/protobuf/protoc-gen-go
-	go get -u google.golang.org/grpc
-	go get -u github.com/intelsdi-x/snap/...
-	go get -u github.com/sirupsen/logrus/...
-
+	bash -c "./scripts/deps.sh"
 test:
 	bash -c "./scripts/test.sh $(TEST_TYPE)"
 test-legacy:
