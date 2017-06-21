@@ -1,7 +1,7 @@
 package: github.com/hstack/snap-plugin-publisher-prometheus
 import:
 - package: github.com/Sirupsen/logrus
-  version: cd7d1bbe41066b6c1f19780f895901052150a575
+  version: be52937128b38f1d99787bb476c789e2af1147f1
 - package: github.com/intelsdi-x/snap
   version: 0b2c0313ff98ef3feccf78ff56a51bb44ccbe5bc
   subpackages:
